@@ -58,8 +58,28 @@
         have a appreciable speed difference. This trend does disappear when the optimization is turned to
         -O3, or -Ofast as the times for all three of them are very close to each other. 
 4. Why is **hash-04's** memory usage so much larger than any of the other versions? Hint: recall when we discussed how the operating system reads a file and makes it available to an application.  Specifically, the O/S will transfer data from disk to its own memory, and then copy from there into buffers provided by the application.  In the memory map case, the O/S is merely sharing the copy of the file's data that is in its (the O/S's) memory, and not making an additional copy from its memory into memory only in the application
-    1. Hash-04 uses more memory than the other versions beacuse it mmaps the entire binary file and 
+    1. Hash-04 uses more memory than the other versions beacuse it mmaps the entire binary file and
         that file is large in size. 
 5. What other compiler options did you try, and did they help at all?
     1. Other compiler options that I used were -O3, and -Ofast. It would seem that they helped as the 
         results that I got where faster than -g and similar in time with -O2.
+# Project #2 Report
+|Thread<br>Count|Wall Clock<br>Time|User Time|System Time|Speedup|
+|:--:|--:|--:|--:|:--:|
+|1|14.44|13.87| 0.47|1.00|
+|2|11.15|21.11| 0.67| 1.29|
+|3| 5.80|15.59| 0.73| 2.49|
+|4| 4.56|15.83| 0.83| 3.17|
+|5| 3.97|16.61| 0.98| 3.64|
+|6| 3.45|16.53| 1.14| 4.19|
+|7| 3.15|17.16| 1.25| 4.58|
+|8| 2.87|17.55| 1.31| 5.03|
+|16| 2.07|18.96| 2.74| 6.98|
+|24| 1.99|19.41| 6.56| 7.26|
+|32| 2.07|18.64| 8.76| 6.98|
+|40| 1.99|17.69|18.68| 7.26|
+|48| 2.00|17.60|17.78| 7.22|
+|56| 1.99|17.19|22.42| 7.26|
+|64| 1.97|16.67|26.95| 7.33|
+|72| 1.96|16.59|26.07| 7.37|
+|80| 1.95|16.99|29.21| 7.41|
