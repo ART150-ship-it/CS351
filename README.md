@@ -86,5 +86,16 @@
 
 ![Alternate description text](<Project-2/IMG_0033.HEIC>)
 
+Question 1: I would think that having the most threads does not lead to greater speedup beacuse of you being limited by the amount of data that can be processed. Because that hint makes me think that if you are at the DMV it does not matter if there are 20 or 2 people waiting to be served the workers won't process more people just because there are more people waiting. 
+
+Question 2: I would think that there is no way to get perfect scaling because the system might hang at certain points. 
+
+Question 3:
 
 $$ speedup = \frac{1}{1 - 0.999 + \frac{0.999}{16}} = 0.0634$$
+
+Question 4: 
+
+$$ slope = \frac{1-5.03}{1-8} = 0.576$$
+
+No, the slope flattens out as more threads get added. I think that the reason why the slope flattens out is because the data is being spread so thin between all of the threads that they are now limited by how fast each thread is. So I would expect that the only way to go faster from here is to just get faster threads. 
