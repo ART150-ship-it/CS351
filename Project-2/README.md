@@ -19,14 +19,22 @@
 |72| 1.96|16.59|26.07| 7.37|
 |80| 1.95|16.99|29.21| 7.41|
 
+## Speed-Up vs Thread Count
+
 ![Alternate description text](<IMG_0033.HEIC>)
 
-Question 1: I would think that having the most threads does not lead to greater speedup beacuse of you being limited by the amount of data that can be processed. Because that hint makes me think that if you are at the DMV it does not matter if there are 20 or 2 people waiting to be served the workers won't process more people just because there are more people waiting. 
+**Question 1:** I would think that having the most threads does not lead to greater speedup beacuse of you being limited by the amount of data that can be processed. Because that hint makes me think that if you are at the DMV it does not matter if there are 20 or 2 people waiting to be served the workers won't process more people just because there are more people waiting. After thinking it thorugh more I still do not really know why adding more threads does not equal a higher speed up factor. But another guess that I have is that its takes more time to feed the threads data, and at a certain point the advantages that we get from having more threads is erased from just getting the threads set up with their data. 
 
-Question 2: I would think that there is no way to get perfect scaling because the system might hang at certain points. 
+**Question 2:** I would think that getting "perfect scaling" is impossible, I would expect an entire program to compose of at least some serial code that cannot be sped up.
 
-Question 3:
+**Question 3:**
 
-$$ speedup = \frac{1}{1 - 0.999 + \frac{0.999}{16}} = 0.0634$$
+$$ serial = \frac{0.012 + 0.00000192}{14.240} = 0.000842$$
 
-Question 4: 
+$$ speedup = \frac{1}{1 - 0.999 + \frac{0.999}{16}} = 15.763$$
+
+**Question 4:** 
+
+$$ slope = \frac{4.58 - 2.49}{7 - 3} = 0.522$$
+
+The linear trend does not continue as threads keep getting added. I think that the curve flattens out because getting those threads set up removes any time saved from adding more threads. 
