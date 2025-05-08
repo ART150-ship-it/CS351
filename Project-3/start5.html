@@ -4,6 +4,7 @@
         <script src="initShaders.js"></script>
 
         <script id="vertex-shader" type="x-shader/x-vertex">
+	    precision mediump float;
 	    uniform float N;
 	    uniform float t;
 
@@ -32,15 +33,25 @@
         </script>
         
         <script id="fragment-shader" type="x-shader/x-fragment">
-	    in float radius;
-	    out vec4 fColor;    
-	
-	    void main() {
-	        const vec4 red = vec4(1.0, 0.0, 0.0, 1.0);
-		const vec4 blue = vec4(0.0, 0.0, 1.0, 1.0);
-		//fColor = mix(red,blue,radius);
-		fColor = vec4(0.0,1.0,0.0,1.0);
-            }
+                precision mediump float;
+		uniform float t; // Time for animation
+		out vec4 fColor;
+		in float radius; // Used to create color variation
+		void main() {
+    			// Define some base colors
+    			vec4 color1 = vec4(1.0, 0.0, 0.0, 1.0); // Red
+    			vec4 color2 = vec4(0.0, 0.0, 1.0, 1.0); // Blue
+    			vec4 color3 = vec4(0.0, 1.0, 0.0, 1.0); // Green
+
+    			// Interpolate color based on time and vertex radius
+    			float mixFactor1 = sin(t) * 0.5 + 0.5;
+    			float mixFactor2 = cos(t) * 0.5 + 0.5;
+
+    			vec4 blendedColor = mix(color1, color2, mixFactor1);
+    			blendedColor = mix(blendedColor, color3, mixFactor2);
+
+    			fColor = blendedColor;
+			}
         </script>
 
         <script>
@@ -60,8 +71,8 @@
 
                 var render = () => {
                     t += 0.01;  // Tick time
-
-                    gl.clear(gl.COLOR_BUFFER_BIT);
+                    gl.uniform1f(uTime, t);
+		    gl.clear(gl.COLOR_BUFFER_BIT);
                     gl.useProgram(program);
 
                     const N = 12;// number of vertices
