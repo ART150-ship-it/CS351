@@ -6,7 +6,7 @@
 
 [Star](https://blue.cs.sonoma.edu/~angomez/start3.html)
 
-[White star with blue background](https://blue.cs.sonoma.edu/~angomez/start3.html)
+[White star with blue background](https://blue.cs.sonoma.edu/~angomez/start3ALT.html)
 
 [Spinny Star](https://blue.cs.sonoma.edu/~angomez/start4.html)
 
