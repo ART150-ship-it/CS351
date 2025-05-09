@@ -12,7 +12,7 @@
 
 [Star](https://blue.cs.sonoma.edu/~angomez/start3.html)
 
-### This is an alternate version of the third version of the program. The three changes are the background being a blue color, the star being colored white, and being in a upright position. These changes are not present in future version of this program. 
+### This is an alternate version of the third version of the program. The three changes are the background being a blue color, the star being colored white, and being in a upright position. These changes are not present in future versions of this program. 
 
 [White star with blue background](https://blue.cs.sonoma.edu/~angomez/start3ALT.html)
 
